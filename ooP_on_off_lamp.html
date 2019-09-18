@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lamp</title>
+</head>
+<body>
+<script>
+
+    let electricLamp = function (status) {
+        this.status = status;
+        this.setStatus = function (status) {
+            this.status = status;
+        };
+        this.getStatus = function () {
+            return this.status;
+        };
+
+        this.on_lamp =function () {
+            this.status = true;
+           // alert("bóng đèn đã bật")
+        }
+        this.off_lamp =function () {
+            this.status =false;
+          //  alert("bóng đèn đã tắt")
+        }
+
+    };
+
+    let SwitButton = function (status) {
+        this.status = status;
+        this.button_on = function (lamp) {
+            if (this.status == true) {
+                lamp.on_lamp();
+            }
+        };
+            this.button_off = function (lamp) {
+                if (this.status ==false) {
+                    lamp.off_lamp();
+                }
+            };
+
+    }
+    ;
+
+    let lamp = new electricLamp(true);
+    let button_lamp = new SwitButton(true);
+   // button_lamp.button_on(lamp);
+  //  button_lamp.button_off(lamp);
+
+
+</script>
+</body>
+</html>
